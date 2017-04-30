@@ -4,21 +4,29 @@ module.exports = {
       name: "localhost",
       port: 8000,
       api: {
-        chatLog: "/js/chat_log",
-        chatBan: "/js/chat_bans"
+        chatLog: "/some/endpoint/path",
+        chatBan: "/some/endpoint/path"
       }
     } 
   },
   test: {
     host: {
       name: 'localhost',
-      port: 8000
+      port: 8000,
+      api: {
+        chatLog: "/some/endpoint/path",
+        chatBan: "/some/endpoint/path"
+      }
     }     
   },
   prod: {
     host: {
       name: 'localhost',
-      port: 8000
+      port: 8000,
+      api: {
+        chatLog: "/some/endpoint/path",
+        chatBan: "/some/endpoint/path"
+      }
     } 
   }
 };

@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Chat</title>
+    <style>
+      html, body {
+        height: 100%;
+      }
+      main {
+        position: relative;
+        height: 100%;
+      }
+
+      form {
+        position: absolute;
+        bottom: 10px;
+
+        width: 100%
+      }
+      input[type="text"] {
+        float: left;
+        width: 90%;
+        margin: 0 10px 10px 10px;
+      }
+
+      .sender {
+        text-align: right;
+        color: #fff;
+        border: 1px solid #ccc;
+        padding: 10px;
+        border-radius: 10px;
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+        -o-border-radius: 10px;
+        background-color: blue;
+      }
+      .receiver {
+        text-align: left;
+        border: 1px solid #ccc;
+        padding: 10px;
+        border-radius: 10px;
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+        -o-border-radius: 10px;
+        background-color: #ececec;
+      }
+    </style>
+  </head>
+
+  <body>
+    <main>
+      <section id="messages"></section>
+      <form action="">
+        <input type="text" value="" id="chat-message" /><button type="submit">Send</button>
+      </form>
+    </main>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+    <script>
+        $(document).ready(function() {
+          var socket = io();
+          $('form').submit(function() {
+            var message = $('#chat-message').val();
+            socket.emit('chat_send', message);
+            $('#messages').append('<p class="sender">' + message + '</p>')
+            $('#chat-message').val('');
+
+            return false;
+          });
+
+          socket.on('chat_receive', function(data) {
+            $('#messages').append('<p class="receiver">' + data + '</p>');
+          });
+        });
+    </script>
+  </body>
+</html>
+

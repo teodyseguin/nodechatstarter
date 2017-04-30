@@ -7,7 +7,7 @@ It's running on Node.js and realtime communication is made possible by Socket.io
 There are 2 exposed API Endpoints from this starter app. One is for sending a message and the other one is for sending a ban.
 I have used to integrate this app on a CMS platform (Drupal), and thought to leave it, as it might be useful to others.
 
-# Usage
+## Usage
 
 ### As a widget app
 

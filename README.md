@@ -12,7 +12,7 @@ I have used to integrate this app on a CMS platform (Drupal), and thought to lea
 ### As a widget app
 
 Use this app in a form of a widget where you can embed to any pages via `iframe`. You can use the `index.html` as your starter client chat app.
-The `index.html` as some pre made styles and functionality. Extend it as necesssary.
+The `index.html` had some pre made styles and functionality. Extend it as necesssary.
 
 ### As a Chat server
 

@@ -1,6 +1,6 @@
 {
-  "name": "Node Chat Starter",
-  "version": "0.0.1",
+  "name": "NodeChatStarter",
+  "version": "0.0.2",
   "description": "Realtime chat communication running on Node.js and Socket.io",
   "scripts": {
     "start": "node_modules/.bin/forever start -w index.js",
